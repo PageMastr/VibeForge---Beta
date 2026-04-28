@@ -1,4 +1,4 @@
-# VibeForge v0.1.0 Beta Release
+# VibeForge v0.1.1 Beta Release
 https://VibeForge.Online/
 
 ## Description
@@ -34,3 +34,38 @@ VibeForge is a high-performance, aesthetically pleasing multi-terminal project m
 - **Cross-Platform Base**: Built on Electron with Vite and React for high performance and low latency.
 - **Local-First Architecture**: Uses `electron-store` for persistent settings and direct filesystem access for project management.
 - **Resource Bundling**: Packaged with essential tools and guides for a zero-config start.
+
+### VibeForge Release Notes - v0.1.1
+
+## New Features
+- **File Explorer Operations**: Full support for file and folder management directly from the sidebar.
+  - **Create**: Add new files or folders to your project via header buttons or context menu.
+  - **Rename**: Rename existing files and directories.
+  - **Delete**: Move unwanted items to the system trash.
+  - **Duplicate**: Quickly clone files or folders.
+  - **Reveal**: Open the file's location in your OS file explorer.
+- **Context Menu**: Added a modern right-click context menu for all entries and the explorer background.
+  - Root/Empty Space: New File, New Folder, Reveal.
+  - Folder actions: Expand/Collapse, New File, New Folder, Rename, Delete, Reveal.
+  - File actions: Open, Rename, Delete, Duplicate, Reveal.
+- **Terminal Reliability**: Enhanced terminal interaction with selection and clipboard support.
+  - **Context Menu**: Right-click inside any terminal to Copy, Paste, or Clear the console.
+  - **Shortcuts**: Support for `Ctrl+Shift+C` (Copy) and `Ctrl+Shift+V` (Paste) standard terminal hotkeys.
+
+## UI/UX Improvements
+- **Terminal Theming**: Added custom selection background matching the app's accent color for better visibility.
+- **Explorer Header**: Added quick-access buttons for "New File" and "New Folder".
+- **Empty Space Support**: Right-clicking in the empty area of the file tree now correctly opens a root-level context menu.
+- **Enhanced Sidebar**: Improved visual feedback with hover states and better spacing for file tree entries.
+- **Cross-Platform Consistency**: Improved path handling logic to ensure smooth operation across Windows, macOS, and Linux.
+- **Dynamic Refresh**: The file tree now automatically updates its view after any file operation.
+
+## Technical Changes
+- **Native Clipboard Integration**: Switched to Electron's native `clipboard` module for improved reliability across all platforms.
+- **IPC Expansion**: Added robust backend handlers in the Electron main process for secure file system manipulation and clipboard access.
+- **Preload API Enhancement**: Exposed system-level path separators and new file utility methods to the renderer.
+- **Global Styles**: Added centralized CSS for context menus and interactive tree elements.
+
+## Bug Fixes
+- **Fixed a bug with copy/pasting within the terminal sessions
+- **Fixed a bug that would cause VibeForge To sometimes Remain Open in the background after being closed. Added code to ensure it always shuts down cleanly
